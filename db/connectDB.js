@@ -4,7 +4,7 @@ const connectDB = async () => {
   try {
     if (mongoose.connection.readyState >= 1) return;
 
-    await mongoose.connect("mongodb://localhost:27017/chai");
+    await mongoose.connect(process.env.MONGODBURI);
     console.log("MongoDB connected");
   } catch (error) {
     console.error("MongoDB connection failed:", error);
