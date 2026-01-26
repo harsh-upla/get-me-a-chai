@@ -187,6 +187,10 @@ export default function PaymentPage({ username }) {
             </button>
           </div>
           <ul className="overflow-y-auto max-h-72 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-[#fff0] [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-[#fff0] dark:[&::-webkit-scrollbar-thumb]:bg-[#4747474f]">
+            <li className="flex gap-2 items-center text-red-600 ">
+              ***The payment gateway part is not done so even failed payments
+              aill show here !!! ***
+            </li>
             {payments.length === 0 && (
               <span className="text-slate-400">
                 No supporters yet. Be the first one to support!
