@@ -78,19 +78,18 @@ export default function Home() {
       <div className="h-1 bg-[#ffffff57]"></div>
       <div className="container text-white mx-auto mt-3 flex gap-3 flex-col ">
         <h1 className="text-center font-bold text-2xl mt-10">
-          {" "}
-          Btw , U can check Out my gameplay
+          Btw , Thank you codewithharry
         </h1>
 
         <div className="items flex justify-around py-26">
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/wR1wCJSUhAQ?si=jyo0Tc3WU3ywhm4l&amp;start=60"
+            src="https://www.youtube.com/embed/QtaorVNAwbI?si=niokfJ1IHJUf6tpT"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowFullScreen
           ></iframe>
         </div>
