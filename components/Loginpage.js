@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Loginpage = () => {
   const { data: session } = useSession();
@@ -16,8 +17,11 @@ const Loginpage = () => {
   return (
     <>
       <div className="">
-        <div className="flex flex-col gap-2 min-h-screen items-center  p-10">
-          <button className="flex items-center w-64 bg-slate-50 text-black border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+        <div className="flex flex-col gap-2 min-h-screen items-center p-10">
+          <span className="text-yellow-400 ">
+             only github option available right now !
+          </span>
+          {/* <button className="flex items-center w-64 bg-slate-50 text-black border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
             <svg
               className="h-6 w-6 mr-2"
               xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +163,7 @@ const Loginpage = () => {
             </svg>
 
             <span>Continue with Facebook</span>
-          </button>
+          </button> */}
 
           <button
             onClick={() => {
@@ -208,7 +212,7 @@ const Loginpage = () => {
             <span>Continue with Github</span>
           </button>
 
-          <button className="flex items-center w-64 bg-slate-50 text-black border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          {/* <button className="flex items-center w-64 bg-slate-50 text-black border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
             <svg
               className="h-6 w-6 mr-2"
               xmlns="http://www.w3.org/2000/svg"
@@ -238,7 +242,9 @@ const Loginpage = () => {
               </g>
             </svg>
             <span>Continue with Apple</span>
-          </button>
+          </button> */}
+          <div className="text-white">or</div>
+          <Link className="text-xl text-blue-500 hover:underline " href={"/signup"}>signup</Link>
         </div>
       </div>
     </>
