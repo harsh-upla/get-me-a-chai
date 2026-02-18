@@ -174,8 +174,8 @@ export default function PaymentPage({ username }) {
           </span>
         </div>
       </div>
-      <div className="w-[80%] mx-auto mt-10 flex gap-3 ">
-        <div className="leaserboard bg-slate-900 w-1/2 rounded-lg p-10">
+      <div className="w-[80%] mx-auto mt-10 flex md:flex-row flex-col gap-3 ">
+        <div className="leaserboard bg-slate-900 w-full md:w-1/2 rounded-lg p-10">
           <div className="flex justify-between items-center mb-5">
             <h2 className="font-bold text-2xl mb-5">Supporters</h2>
             <button
@@ -208,7 +208,7 @@ export default function PaymentPage({ username }) {
             })}
           </ul>
         </div>
-        <div className="payment bg-slate-900 w-1/2 rounded-lg p-5 flex flex-col gap-3">
+        <div className="payment bg-slate-900 w-full md:w-1/2 rounded-lg p-5 flex flex-col gap-3">
           <h2 className="font-bold text-2xl mb-5">Make a payment</h2>
           <input
             onChange={handleChange}

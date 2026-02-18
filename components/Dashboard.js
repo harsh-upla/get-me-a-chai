@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import React from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { fetchUser, updateProfile } from "@/actions/userActions";
@@ -10,7 +10,31 @@ import Link from "next/link";
 
 const Dashboard = () => {
   const { data: session } = useSession();
-  const router = useRouter();
+  // const router = useRouter();
+  // console.log(session);
+  const fetchData = async () => {
+    if (!session) {
+      alert("User not found: ");
+    }
+
+    const data = await fetchUser(session?.user?.name);
+
+    if (!data) {
+      alert("User data not found (Dashboard.js)");
+      return;
+    }
+    if (data) {
+      toast.success("data fetched successfully ...")
+      setForm(data);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [session]);
+
+  const [form, setForm] = useState({});
+
   if (!session) {
     return (
       <>
@@ -28,23 +52,6 @@ const Dashboard = () => {
       </>
     );
   }
-
-  useEffect(() => {
-    fetchData();
-  }, [session]);
-
-  const [form, setForm] = useState({});
-
-  const fetchData = async () => {
-    if (!session?.user?.name) {
-      alert("User not found: ", session.user.name);
-    }
-
-    const data = await fetchUser(session?.user?.name);
-
-    // if (!data) {alert('User not found'); return;};
-    setForm(data);
-  };
 
   // const fetchData = async () => {
 
