@@ -42,7 +42,7 @@ export const fetchUser = async (username) => {
   if (!u) {
     // Handle the case where no user is found.
     // You might want to return null, an empty object, or throw a specific error.
-    console.log(`User with username '${username}' not found.`);
+    // console.log(`User with username '${username}' not found.`);
     return null;
   }
   let user = u.toObject({ flattenObjectIds: true });
@@ -69,7 +69,7 @@ export const fetchUserEmail = async (email) => {
   if (!u) {
     // Handle the case where no user is found.
     // You might want to return null, an empty object, or throw a specific error.
-    console.log(`User with username '${email}' not found.`);
+    console.log(`User with email '${email}' not found.`);
     return null;
   }
   let user = u.toObject({ flattenObjectIds: true });
