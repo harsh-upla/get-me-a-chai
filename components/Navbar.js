@@ -23,9 +23,7 @@ const Navbar = () => {
       } else {
         console.log("User data not found at getdata function");
       }
-    } else {
-      console.log("session not found");
-    }
+    } 
   };
   return (
     <nav className="h-16">
@@ -81,7 +79,7 @@ const Navbar = () => {
                     >
                       <div className="py-1">
                         <Link
-                          href="/dashboard"
+                          href={"/dashboard"}
                           className="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
                         >
                           dashboard
