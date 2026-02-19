@@ -102,7 +102,7 @@ const Dashboard = () => {
       <h1 className="text-center font-bold text-3xl py-10">
         Welcome to your Dashboard
       </h1>
-      <div className=" container mx-auto">
+      <div className=" w-[90vw] md:w-[60vw] h-[84vh] mx-auto">
         <form className="max-w-2xl mx-auto" action={handleSubmit}>
           <div className="my-2">
             <label

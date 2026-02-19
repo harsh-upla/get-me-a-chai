@@ -26,8 +26,8 @@ const Navbar = () => {
     } 
   };
   return (
-    <nav className="h-16">
-      <div className="text-white h-full bg-gray-900 flex items-center justify-between px-3">
+    <nav className="md:h-16 max-w-full overflow-auto">
+      <div className="text-white h-full bg-gray-900 pb-3 md:pb-0 flex flex-col md:flex-row  items-center md:justify-between md:px-3">
         <div className="logo font-bold text-xl select-none flex gap-0 justify-center items-center">
           <Link className="flex gap-0 justify-center items-center" href={"/"}>
             <img
@@ -41,7 +41,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="opts ">
-          <div className="">
+          <div className="flex md:w-fit w-[30vw] md:flex-row flex-col">
             {session ? (
               <div className="flex justify-center items-center gap-3">
                 <div className="cursor-pointer relative">
@@ -75,7 +75,7 @@ const Navbar = () => {
 
                     <div
                       anchor="bottom end"
-                      className={`${showdropdown ? "" : "hidden"} absolute z-3 right-0 mt-2 w-36 origin-top-right rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in`}
+                      className={`${showdropdown ? "" : "hidden"} absolute z-10 right-0 mt-2 w-36 origin-top-right rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in`}
                     >
                       <div className="py-1">
                         <Link
@@ -109,7 +109,7 @@ const Navbar = () => {
                       signOut();
                     }}
                     type="button"
-                    className="text-white bg-linear-to-r from-purple-500 to-pink-500 hover:bg-linear-to-l focus:ring-2 focus:outline-none focus:ring-purple-900 dark:focus:ring-purple-800 font-medium rounded-lg text-lg px-4 py-2.5 text-center leading-5 cursor-pointer "
+                    className="text-white bg-linear-to-r from-purple-500 to-pink-500 hover:bg-linear-to-l focus:ring-2 focus:outline-none focus:ring-purple-900 dark:focus:ring-purple-800 font-medium rounded-lg text-sm md:w-fit w-[30vw] px-4 py-2.5 text-center leading-5 cursor-pointer "
                   >
                     Log Out
                   </button>
