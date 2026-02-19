@@ -118,41 +118,33 @@ export default function Home() {
               src="./group.gif"
               alt="man"
             />
-            <div
-              className="flex flex-col gap-3 w-[33vw] p-4 bg-linear-to-br from-[#141e302d] to-[#243b5544]
-                border border-white/20
-                backdrop-blur-xl
-                shadow-2xl
-                rounded-2xl"
-            >
+            <div className="flex flex-col gap-3 w-[33vw] p-4 bg-linear-to-br from-[#141e302d] to-[#243b5544] border border-white/20 backdrop-blur-xl shadow-2xl rounded-2xl">
               <h1 className="text-center">total user count : {users.length}</h1>
               {users &&
                 users.map((item, index) => {
                   return (
-                    <>
-                      <div
-                        key={item.email || index}
-                        className="p-2 flex gap-3 items-center border border-white/20 backdrop-blur-xl rounded-2xl "
-                      >
-                        <div className="size-14">
-                          <img
-                            width={50}
-                            className="rounded-full"
-                            src={`${item.profilepic}`}
-                            alt="PP"
-                          />
-                        </div>
-                        <div className="flex items-center justify-between w-full">
-                          <span>{item.username}</span>
-                          <Link
-                            className="bg-blue-700 px-3 py-1.5 rounded-lg"
-                            href={`/${item.username}`}
-                          >
-                            Support
-                          </Link>
-                        </div>
+                    <div
+                      key={item._id || item.email || index}
+                      className="p-2 flex gap-3 items-center border border-white/20 backdrop-blur-xl rounded-2xl "
+                    >
+                      <div className="size-14">
+                        <img
+                          width={50}
+                          className="rounded-full"
+                          src={`${item.profilepic}`}
+                          alt="PP"
+                        />
                       </div>
-                    </>
+                      <div className="flex items-center justify-between w-full">
+                        <span>{item.username}</span>
+                        <Link
+                          className="bg-blue-700 px-3 py-1.5 rounded-lg"
+                          href={`/${item.username}`}
+                        >
+                          Support
+                        </Link>
+                      </div>
+                    </div>
                   );
                 })}
             </div>

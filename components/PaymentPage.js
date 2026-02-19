@@ -166,10 +166,10 @@ export default function PaymentPage({ username }) {
             chai!
           </span>
           <span className="text-slate-400">
-            {payments.length} Supporters , {c} raised{" "}
+            {payments.length} Supporters , {c} raised
             <span className="font-bold">
               ₹{payments.reduce((total, item) => total + item.amount, 0) / 100}
-            </span>{" "}
+            </span>
             so far!
           </span>
         </div>
@@ -200,8 +200,8 @@ export default function PaymentPage({ username }) {
               return (
                 <li key={item._id} className="flex gap-2 items-center ">
                   <img width={33} src="avatar.gif" alt="avatar" />
-                  {item.name} donated{" "}
-                  <span className="font-bold"> {`₹${item.amount / 100}`} </span>{" "}
+                  {item.name} donated
+                  <span className="font-bold"> {`₹${item.amount / 100}`} </span>
                   with a message {`"${item.message}"`}
                 </li>
               );
