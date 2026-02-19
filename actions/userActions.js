@@ -90,43 +90,43 @@ export const fetchUserEmail = async (email) => {
   // };
 };
 
+const processMyData = async (data) => {
+  // 1. Convert Mongoose document to a plain object
+  //    .toObject() keeps getters/virtuals, .lean() is faster and returns POJO directly
+  const plainObject = data.toObject ? data.toObject() : data; // Use .toObject() if available
+
+  // 2. Map over the object to ensure all values are serializable
+  //    Specifically handle Date objects, ObjectId objects, etc.
+  const serializedObject = JSON.parse(JSON.stringify(plainObject));
+
+  // If you need specific transformations, do them here.
+  // For example, converting _id to a string if it's an ObjectId object
+  if (
+    serializedObject._id &&
+    typeof serializedObject._id === "object" &&
+    serializedObject._id.toString
+  ) {
+    serializedObject._id = serializedObject._id.toString();
+  }
+
+  // Convert Date objects to ISO strings
+  if (serializedObject.createdAt instanceof Date) {
+    serializedObject.createdAt = serializedObject.createdAt.toISOString();
+  }
+  if (serializedObject.updatedAt instanceof Date) {
+    serializedObject.updatedAt = serializedObject.updatedAt.toISOString();
+  }
+  if (serializedObject.date instanceof Date) {
+    // Assuming 'date' is also a Date object
+    serializedObject.date = serializedObject.date.toISOString();
+  }
+
+  return serializedObject;
+};
+
 export const fetchPayments = async (username) => {
   await connectDB();
   // this is for only development and test purposes
-
-  const processMyData = (data) => {
-    // 1. Convert Mongoose document to a plain object
-    //    .toObject() keeps getters/virtuals, .lean() is faster and returns POJO directly
-    const plainObject = data.toObject ? data.toObject() : data; // Use .toObject() if available
-
-    // 2. Map over the object to ensure all values are serializable
-    //    Specifically handle Date objects, ObjectId objects, etc.
-    const serializedObject = JSON.parse(JSON.stringify(plainObject));
-
-    // If you need specific transformations, do them here.
-    // For example, converting _id to a string if it's an ObjectId object
-    if (
-      serializedObject._id &&
-      typeof serializedObject._id === "object" &&
-      serializedObject._id.toString
-    ) {
-      serializedObject._id = serializedObject._id.toString();
-    }
-
-    // Convert Date objects to ISO strings
-    if (serializedObject.createdAt instanceof Date) {
-      serializedObject.createdAt = serializedObject.createdAt.toISOString();
-    }
-    if (serializedObject.updatedAt instanceof Date) {
-      serializedObject.updatedAt = serializedObject.updatedAt.toISOString();
-    }
-    if (serializedObject.date instanceof Date) {
-      // Assuming 'date' is also a Date object
-      serializedObject.date = serializedObject.date.toISOString();
-    }
-
-    return serializedObject;
-  };
 
   let p = await Payment.find({ to_user: username })
     .limit(5)
@@ -152,4 +152,13 @@ export const updateProfile = async (data, oldUsername) => {
     );
   }
   await User.updateOne({ email: ndata.email }, ndata);
+};
+
+export const fetchAllUsers = async () => {
+  await connectDB();
+  let f = await User.find({});
+
+  let x = await processMyData(f)
+
+  return x;
 };

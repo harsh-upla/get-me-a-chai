@@ -2,7 +2,7 @@ import mongoose, { model } from "mongoose";
 
 const UserSchema = new mongoose.Schema({
   // String is shorthand for {type: String}
-  email: { type: String, required: true },
+  email: { type: String, required: true,unique: true },
   username: { type: String, required: true },
   name: String,
   profilepic: String,

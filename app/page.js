@@ -1,6 +1,31 @@
+"use client";
+import { fetchAllUsers } from "@/actions/userActions";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Home() {
+  const [users, setusers] = useState([]);
+
+  const userFetch = async () => {
+    let u = await fetchAllUsers();
+    // console.log(u);
+
+    if (u) {
+      setusers(u);
+      console.log("users", u);
+      toast.success("users getched");
+    }
+  };
+
+  useEffect(() => {
+    toast.success("You are Welcomed.......");
+  }, []);
+
+  useEffect(() => {
+    userFetch();
+  }, []);
+
   return (
     <>
       <div className="flex flex-col text-white items-center justify-center w-full h-[60vh] md:h-[40vh] gap-20 md:gap-5 md:px-0 ">
@@ -82,6 +107,83 @@ export default function Home() {
 
       <div className="h-1 bg-[#ffffff57]"></div>
 
+      <div className="container text-white mx-auto mt-3 flex gap-3 flex-col  ">
+        <h1 className="text-center font-bold text-2xl mt-10">All users !</h1>
+
+        <div className="items flex justify-around md:flex-row flex-col  md:gap-0 gap-10 py-26">
+          <div className="flex flex-col gap-5 items-center justify-center bg-[rgba(47,144,182,0.22)] md:py-0 py-7 w-[90vw] mx-auto rounded-xl md:w-[20vw] md:m-0 md:bg-[#fff0]">
+            <img
+              width={88}
+              className="bg-gray-400 rounded-full"
+              src="./group.gif"
+              alt="man"
+            />
+            <div
+              className="flex flex-col gap-3 w-[33vw] p-4 bg-linear-to-br from-[#141e302d] to-[#243b5544]
+                border border-white/20
+                backdrop-blur-xl
+                shadow-2xl
+                rounded-2xl"
+            >
+              <h1 className="text-center">total user count : {users.length}</h1>
+              {users &&
+                users.map((item, index) => {
+                  return (
+                    <>
+                      <div
+                        key={item.email || index}
+                        className="p-2 flex gap-3 items-center border border-white/20 backdrop-blur-xl rounded-2xl "
+                      >
+                        <div className="size-14">
+                          <img
+                            width={50}
+                            className="rounded-full"
+                            src={`${item.profilepic}`}
+                            alt="PP"
+                          />
+                        </div>
+                        <div className="flex items-center justify-between w-full">
+                          <span>{item.username}</span>
+                          <Link
+                            className="bg-blue-700 px-3 py-1.5 rounded-lg"
+                            href={`/${item.username}`}
+                          >
+                            Support
+                          </Link>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+            </div>
+          </div>
+
+          {/* <div className="flex flex-col gap-5 items-center justify-center bg-[rgba(47,144,182,0.22)] md:py-0 py-7 w-[90vw] mx-auto rounded-xl md:w-[20vw] md:m-0 md:bg-[#fff0]">
+            <img
+              width={88}
+              className="bg-gray-400 rounded-full"
+              src="./coin.gif"
+              alt="man"
+            />
+            <p className="">Fund yourself</p>
+            <p>your fans are here to help you</p>
+          </div>
+
+          <div className="flex flex-col gap-5 items-center justify-center bg-[rgba(47,144,182,0.22)] md:py-0 py-7 w-[90vw] mx-auto rounded-xl md:w-[20vw] md:m-0 md:bg-[#fff0]">
+            <img
+              width={88}
+              className="bg-gray-400 rounded-full"
+              src="./group.gif"
+              alt="man"
+            />
+            <p className="">Fund yourself</p>
+            <p>your fans are here to help you</p>
+          </div> */}
+        </div>
+      </div>
+
+      <div className="h-1 bg-[#ffffff57]"></div>
+
       <div className="container text-white mx-auto mt-3 flex gap-3 flex-col ">
         <h1 className="text-center font-bold text-2xl mt-10">
           Btw , Thank you codewithharry
@@ -102,3 +204,4 @@ export default function Home() {
     </>
   );
 }
+33;

@@ -40,7 +40,7 @@ export const authoptions = NextAuth({
             email: user.email,
             username: user.name,
           });
-          newUser.save();
+         await newUser.save();
         }
         return true;
       }

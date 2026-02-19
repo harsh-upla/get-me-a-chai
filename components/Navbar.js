@@ -26,7 +26,7 @@ const Navbar = () => {
     } 
   };
   return (
-    <nav className="md:h-16 max-w-full overflow-auto">
+    <nav className="md:h-16 max-w-full">
       <div className="text-white h-full bg-gray-900 pb-3 md:pb-0 flex flex-col md:flex-row  items-center md:justify-between md:px-3">
         <div className="logo font-bold text-xl select-none flex gap-0 justify-center items-center">
           <Link className="flex gap-0 justify-center items-center" href={"/"}>
