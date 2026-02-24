@@ -13,7 +13,7 @@ export default function Home() {
 
     if (u) {
       setusers(u);
-      console.log("users", u);
+      // console.log("users", u);
       toast.success("users getched");
     }
   };
@@ -48,13 +48,12 @@ export default function Home() {
 
         <div className="btn cursor-pointer gap-8 md:gap-3 flex md:flex-row flex-col w-[60vw] md:w-full justify-center">
           <Link
-            className="text-white flex items-center justify-center bg-linear-to-r from-purple-500 to-pink-500 hover:bg-linear-to-l focus:ring-2 focus:outline-none focus:ring-purple-900 dark:focus:ring-purple-800 font-medium rounded-lg text-xl px-4 py-2.5 text-center leading-5 cursor-pointer "
+            className=" text-white flex items-center justify-center font-medium rounded-lg text-xl px-4 py-2.5 leading-5 cursor-pointer bg-linear-to-r from-purple-500 via-pink-500 to-purple-500 bg-size-[200%_100%] bg-left transition-[background-position,box-shadow,transform] duration-500 ease-out hover:bg-right hover:shadow-[0_8px_25px_rgba(168,85,247,0.35)] hover:-translate-y-0.5 focus:ring-2 focus:outline-none focus:ring-purple-900 dark:focus:ring-purple-800 "
             href={"/login"}
-          >
-            <button type="button">Start now !</button>
+          >Start now !
           </Link>
           <Link
-            className="text-white bg-linear-to-r from-cyan-500 to-blue-500 hover:bg-linear-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300       dark:focus:ring-cyan-800 font-medium rounded-lg text-xl cursor-pointer px-4 py-2.5 text-center leading-5"
+            className="relative inline-block text-white font-medium px-4 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 text-xl"
             href={"https://github.com/harsh-upla/get-me-a-chai"}
           >
             <button type="button">Github</button>

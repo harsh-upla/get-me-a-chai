@@ -23,7 +23,7 @@ const Navbar = () => {
       } else {
         console.log("User data not found at getdata function");
       }
-    } 
+    }
   };
   return (
     <nav className="md:h-16 max-w-full">
@@ -41,7 +41,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="opts ">
-          <div className="flex md:w-fit w-[30vw] md:flex-row flex-col">
+          <div className="flex md:w-fit w-[30vw] md:flex-row flex-col gap-3 font-bold">
             {session ? (
               <div className="flex justify-center items-center gap-3">
                 <div className="cursor-pointer relative">
@@ -109,22 +109,26 @@ const Navbar = () => {
                       signOut();
                     }}
                     type="button"
-                    className="text-white bg-linear-to-r from-purple-500 to-pink-500 hover:bg-linear-to-l focus:ring-2 focus:outline-none focus:ring-purple-900 dark:focus:ring-purple-800 font-medium rounded-lg text-sm md:w-fit w-[30vw] px-4 py-2.5 text-center leading-5 cursor-pointer "
+                    className="font-bold relative inline-block text-white text-lg px-3.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-pink-600 via-purple-500 to-pink-600 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 cursor-pointer" 
                   >
                     Log Out
                   </button>
                 </div>
               </div>
             ) : (
-              <Link href={"/login"}>
-                <button
+              <Link href={"/login"}
                   type="button"
-                  className="text-white bg-linear-to-r from-purple-500 to-pink-500 hover:bg-linear-to-l focus:ring-2 focus:outline-none focus:ring-purple-900 dark:focus:ring-purple-800 font-medium rounded-lg text-lg px-4 py-2.5 text-center leading-5 cursor-pointer "
+                  className="font-bold relative inline-block text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" 
                 >
                   Login
-                </button>
               </Link>
             )}
+            <Link
+              href={"/contact"}
+              type="button"
+              className="font-bold relative inline-block text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" >
+              Contact Us
+            </Link>
           </div>
         </div>
       </div>
