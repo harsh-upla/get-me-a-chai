@@ -118,7 +118,7 @@ const Navbar = () => {
             ) : (
               <Link href={"/login"}
                   type="button"
-                  className="font-bold flex justify-center items-center relative text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" 
+                  className="font-bold relative inline-block text-white text-lg px-3.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-pink-600 via-purple-500 to-pink-600 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 cursor-pointer" 
                 >
                   Login
               </Link>
