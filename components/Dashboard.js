@@ -23,7 +23,7 @@ const Dashboard = () => {
       alert("User data not found (Dashboard.js)");
       return;
     }
-    if (data) {
+    else{
       toast.success("data fetched successfully ...")
       setForm(data);
     }
