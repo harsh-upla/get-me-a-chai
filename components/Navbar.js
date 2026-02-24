@@ -118,7 +118,7 @@ const Navbar = () => {
             ) : (
               <Link href={"/login"}
                   type="button"
-                  className="font-bold relative inline-block text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" 
+                  className="font-bold flex justify-center items-center relative text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" 
                 >
                   Login
               </Link>
@@ -126,7 +126,7 @@ const Navbar = () => {
             <Link
               href={"/contact"}
               type="button"
-              className="font-bold relative inline-block text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" >
+              className="font-bold relative flex justify-center items-center text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" >
               Contact Us
             </Link>
           </div>

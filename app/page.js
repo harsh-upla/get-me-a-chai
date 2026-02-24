@@ -53,7 +53,7 @@ export default function Home() {
           >Start now !
           </Link>
           <Link
-            className="relative inline-block text-white font-medium px-4 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 text-xl"
+            className="relative flex items-center justify-center text-white font-medium px-4 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 text-xl"
             href={"https://github.com/harsh-upla/get-me-a-chai"}
           >
             <button type="button">Github</button>
@@ -117,27 +117,27 @@ export default function Home() {
               src="./group.gif"
               alt="man"
             />
-            <div className="flex flex-col gap-3 w-[33vw] p-4 bg-linear-to-br from-[#141e302d] to-[#243b5544] border border-white/20 backdrop-blur-xl shadow-2xl rounded-2xl">
+            <div className="flex flex-col gap-3 w-[85vw] md:w-[33vw] p-4 bg-linear-to-br from-[#141e302d] to-[#243b5544] border border-white/20 backdrop-blur-xl shadow-2xl rounded-2xl">
               <h1 className="text-center">total user count : {users.length}</h1>
               {users &&
                 users.map((item, index) => {
                   return (
                     <div
                       key={item._id || item.email || index}
-                      className="p-2 flex gap-3 items-center border border-white/20 backdrop-blur-xl rounded-2xl "
+                      className="md:px-5 md:py-2 flex gap-5 items-center border border-white/20 backdrop-blur-xl rounded-2xl px-2 py-1"
                     >
-                      <div className="size-14">
+                      <div className="size-12 md:size-14 mt-1">
                         <img
                           width={50}
-                          className="rounded-full"
+                          className="rounded-full object-contain"
                           src={`${item.profilepic}`}
                           alt="PP"
                         />
                       </div>
-                      <div className="flex items-center justify-between w-full">
+                      <div className="flex items-center md:text-lg md:font-bold justify-between w-full ">
                         <span>{item.username}</span>
                         <Link
-                          className="bg-blue-700 px-3 py-1.5 rounded-lg"
+                          className="bg-blue-700 px-4 py-1.5 md:px-6 md:py-1.5 rounded-lg"
                           href={`/${item.username}`}
                         >
                           Support
