@@ -13,9 +13,9 @@ const Dashboard = () => {
   // const router = useRouter();
   // console.log(session);
   const fetchData = async () => {
-    if (!session) {
-      alert("User not found: ");
-    }
+    // if (!session) {
+    //   alert("User not found: ");
+    // }
 
     const data = await fetchUser(session?.user?.name);
 
@@ -71,7 +71,7 @@ const Dashboard = () => {
 
   const handleSubmit = async (data) => {
     let a = await updateProfile(data, session?.user?.name);
-    toast("✅ Information saved Successfully... ", {
+    toast.success("✅ Information saved Successfully... ", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: true,
