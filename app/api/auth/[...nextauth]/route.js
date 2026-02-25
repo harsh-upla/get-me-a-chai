@@ -23,14 +23,14 @@ export const authoptions = NextAuth({
     //     clientId: process.env.FACEBOOK_ID,
     //     clientSecret: process.env.FACEBOOK_SECRET
     // }),
-    // GoogleProvider({
-    //     clientId: process.env.GOOGLE_ID,
-    //     clientSecret: process.env.GOOGLE_SECRET
-    // }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
   ],
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
-      if (account.provider == "github") {
+      if (account.provider == "github" || account.provider == "google") {
         await connectDB();
         // Check if the user already exists in the database
         const currentUser = await User.findOne({ email: email });
@@ -40,7 +40,7 @@ export const authoptions = NextAuth({
             email: user.email,
             username: user.name,
           });
-         await newUser.save();
+          await newUser.save();
         }
         return true;
       }

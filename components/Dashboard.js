@@ -3,7 +3,7 @@ import React from "react";
 // import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
-import { fetchUser, updateProfile } from "@/actions/userActions";
+import { fetchUser, fetchUserEmail, updateProfile } from "@/actions/userActions";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const Dashboard = () => {
     //   alert("User not found: ");
     // }
 
-    const data = await fetchUser(session?.user?.name);
+    const data = await fetchUserEmail(session?.user?.email);
 
     if (!data) {
       alert("User data not found (Dashboard.js)");
