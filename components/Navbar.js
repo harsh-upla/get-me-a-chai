@@ -55,22 +55,24 @@ const Navbar = () => {
                           setShowdropdown(false);
                         }, 500);
                       }}
-                      className="cursor-pointer inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20"
+                      className="cursor-pointer rounded-xl relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-heading rounded-base group bg-linear-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white "
                     >
-                      WELCOME {session.user.email}
-                      <svg
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        data-slot="icon"
-                        aria-hidden="true"
-                        className="-mr-1 size-5 text-gray-400"
-                      >
-                        <path
-                          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                          clipRule="evenodd"
-                          fillRule="evenodd"
-                        />
-                      </svg>
+                      <span className= " rounded-xl relative px-4 py-2.5 transition-all ease-in duration-150 bg-black rounded-base group-hover:bg-transparent group-hover:dark:bg-transparent leading-5 flex">
+                        WELCOME {session.user.email}
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          data-slot="icon"
+                          aria-hidden="true"
+                          className="-mr-1 size-5 text-white"
+                        >
+                          <path
+                            d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                            clipRule="evenodd"
+                            fillRule="evenodd"
+                          />
+                        </svg>
+                      </span>
                     </button>
 
                     <div
@@ -109,25 +111,41 @@ const Navbar = () => {
                       signOut();
                     }}
                     type="button"
-                    className="font-bold relative inline-block text-white text-lg px-3.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-pink-600 via-purple-500 to-pink-600 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 cursor-pointer" 
+                    className="font-bold relative inline-block text-white text-lg px-3.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-pink-600 via-purple-500 to-pink-600 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 cursor-pointer"
                   >
                     Log Out
                   </button>
                 </div>
               </div>
             ) : (
-              <Link href={"/login"}
-                  type="button"
-                  className="font-bold relative inline-block text-white text-lg px-3.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-pink-600 via-purple-500 to-pink-600 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 cursor-pointer" 
-                >
-                  Login
-              </Link>
+              <Link
+              href={"/login"}
+              type="button"
+              className="font-bold relative flex justify-center items-center text-white text-xl px-3 py-2.5 rounded-lg leading-5 bg-linear-to-r from-pink-500 via-purple-500 to-pink-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right "
+            >
+              Login
+            </Link>
+              // <Link
+              //   href={"/login"}
+              //   type="button"
+              //   className="font-bold relative inline-block text-white text-lg px-3.5 py-3 rounded-lg leading-5 bg-linear-to-r from-pink-600 via-purple-500 to-pink-600 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 cursor-pointer"
+              // >
+              //   Login
+              // </Link>
             )}
             <Link
               href={"/contact"}
               type="button"
-              className="font-bold relative flex justify-center items-center text-white text-lg px-2.5 py-2.5 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800" >
+              className="font-bold relative flex justify-center items-center text-white text-lg px-2.5 py-2 rounded-lg leading-5 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right "
+            >
               Contact
+            </Link>
+            <Link
+              href={"/about"}
+              type="button"
+              className="font-bold relative flex justify-center items-center text-white text-lg px-2.5 py-2 rounded-lg leading-5 bg-linear-to-r from-purple-500 via-blue-500 to-purple-500 bg-size-[200%_100%] bg-left transition-all duration-500 ease-out hover:bg-right "
+            >
+              About
             </Link>
           </div>
         </div>

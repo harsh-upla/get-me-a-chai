@@ -59,7 +59,7 @@ export default function ContactPage() {
               <Link
               href={"https://github.com/harsh-upla/"}
                 type="submit"
-                className="inline-flex items-center gap-3 px-4 py-2 rounded-lg text-white bg-linear-to-br from-[#04D9D9] to-[#3fb7ff] shadow-[0_8px_24px_rgba(4,217,217,0.18)] hover:brightness-95 disabled:opacity-60 transition"
+                className="w-fit mt-3 flex items-center gap-3 px-6 py-2.5 rounded-lg text-white bg-linear-to-br from-[#04D9D9] to-[#3fb7ff] shadow-[0_8px_24px_rgba(4,217,217,0.18)] hover:brightness-95 disabled:opacity-60 transition"
               >
                 Github
               </Link>
@@ -68,7 +68,7 @@ export default function ContactPage() {
         </div>
 
         {/* Right: Form */}
-        <div
+        {/* <div
           className="p-6 md:p-8 rounded-2xl
                         backdrop-blur-xl
                         bg-[linear-linear(180deg,rgba(255,255,255,0.06)_0%,rgba(4,217,217,0.08)_100%)]
@@ -76,7 +76,7 @@ export default function ContactPage() {
                         shadow-[0_12px_40px_rgba(3,10,18,0.6)]"
         >
           <ContactForm />
-        </div>
+        </div> */}
       </section>
     </main>
   );

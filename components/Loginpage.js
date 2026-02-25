@@ -243,8 +243,8 @@ const Loginpage = () => {
             </svg>
             <span>Continue with Apple</span>
           </button> */}
-          <div className="text-white">or</div>
-          <Link className="text-xl text-blue-500 hover:underline " href={"/signup"}>signup</Link>
+          {/* <div className="text-white">or</div> */}
+          {/* <Link className="text-xl text-blue-500 hover:underline " href={"/signup"}>signup</Link> */}
         </div>
       </div>
     </>
