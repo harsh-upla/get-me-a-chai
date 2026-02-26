@@ -33,7 +33,7 @@ export const authoptions = NextAuth({
       if (account.provider == "github" || account.provider == "google") {
         await connectDB();
         // Check if the user already exists in the database
-        const currentUser = await User.findOne({ email: email });
+        const currentUser = await User.findOne({ email: user.email });
         if (!currentUser) {
           // Create a new user
           const newUser = await User.create({
@@ -45,11 +45,11 @@ export const authoptions = NextAuth({
         return true;
       }
     },
-  },
-  async session({ session, user, token }) {
-    const dbUser = await User.findOne({ email: session.user.email });
-    session.user.name = dbUser.username;
-    return session;
+    async session({ session, user, token }) {
+      const dbUser = await User.findOne({ email: session.user.email });
+      session.user.name = dbUser.username;
+      return session;
+    },
   },
 });
 
