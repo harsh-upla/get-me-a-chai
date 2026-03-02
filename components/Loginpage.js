@@ -18,9 +18,6 @@ const Loginpage = () => {
     <>
       <div className="">
         <div className="flex flex-col gap-2 min-h-screen items-center p-10">
-          <span className="text-yellow-400 ">
-             only github option available right now !
-          </span>
            <button
            onClick={()=>{signIn("google")}}
            className="flex cursor-pointer items-center w-64 bg-slate-50 text-black border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-medium  hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
