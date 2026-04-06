@@ -63,6 +63,8 @@ export const fetchUser = async (username) => {
   // };
 };
 
+//Fetches user by email given in argument
+
 export const fetchUserEmail = async (email) => {
   await connectDB();
   let u = await User.findOne({ email: email });

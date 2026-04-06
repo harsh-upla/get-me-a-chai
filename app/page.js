@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 export default function Home() {
   const [users, setusers] = useState([]);
 
+  //fetches user to diaplay all user
   const userFetch = async () => {
     let u = await fetchAllUsers();
     // console.log(u);

@@ -29,6 +29,7 @@ export const authoptions = NextAuth({
     }),
   ],
   callbacks: {
+    //sign In callback
     async signIn({ user, account, profile, email, credentials }) {
       if (account.provider == "github" || account.provider == "google") {
         await connectDB();
@@ -45,6 +46,7 @@ export const authoptions = NextAuth({
         return true;
       }
     },
+    //Session callback
     async session({ session, user, token }) {
       const dbUser = await User.findOne({ email: session.user.email });
       session.user.name = dbUser.username;

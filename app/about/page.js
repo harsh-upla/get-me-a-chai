@@ -92,7 +92,7 @@ export default function AboutPage() {
       <section className="container mx-auto px-6 py-24">
         <h2 className="text-3xl font-semibold text-center mb-12">Tech Stack</h2>
 
-        <div className="grid md:grid-cols-3 gap-8 w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:w-6xl mx-auto">
             <motion.div
               whileHover={{ rotateX: 8, rotateY: -8, scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200 }}
@@ -174,6 +174,7 @@ export default function AboutPage() {
 
       {/* 📊 STATS */}
       <section className="container mx-auto px-6 py-24 text-center">
+        <h2 className="text-3xl font-semibold text-center mb-12">STATS</h2>
         <div className="grid md:grid-cols-2 gap-10">
           <div className="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-lg">
             <h3 className="text-4xl font-bold text-[#04D9D9]">
