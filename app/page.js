@@ -3,6 +3,7 @@ import { fetchAllUsers } from "@/actions/userActions";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import { Skeleton } from 'boneyard-js/react'
 
 export default function Home() {
   const [users, setusers] = useState([]);
@@ -15,7 +16,7 @@ export default function Home() {
     if (u) {
       setusers(u);
       // console.log("users", u);
-      toast.success("users getched");
+      toast.success("users fetched");
     }
   };
 
@@ -28,7 +29,11 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <Skeleton name="blog-card" loading={false}>
+      <head>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9342853720075226"
+          crossOrigin="anonymous"></script>
+      </head>
       <div className="flex flex-col text-white items-center justify-center w-full h-[60vh] md:h-[40vh] gap-20 md:gap-5 md:px-0 ">
         <div className=" font-bold text-5xl flex gap-0 md:gap-3 h-10 md:h-20 md:pl-0 pl-2 w-fit">
           <span className="pl-10">Buy Me a Chai</span>
@@ -193,7 +198,6 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
-    </>
+    </Skeleton>
   );
-}
-33;
+};

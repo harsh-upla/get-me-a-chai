@@ -3,6 +3,7 @@ import PaymentPage from "@/components/PaymentPage";
 import { notFound } from "next/navigation";
 import User from "@/models/User";
 import connectDB from "@/db/connectDB";
+import { Skeleton } from 'boneyard-js/react'
 
 export default async function username({ params }) {
   const { username } = await params;

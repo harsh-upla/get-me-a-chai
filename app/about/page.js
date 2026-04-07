@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
+import { Skeleton } from 'boneyard-js/react'
 
 export default function AboutPage() {
   const { scrollYProgress } = useScroll();
@@ -55,6 +56,7 @@ export default function AboutPage() {
   }
 
   return (
+     <Skeleton name="blog-card" loading={false}>
     <main className="relative min-h-screen bg-[#071017] text-white overflow-hidden">
       {/* 🌊 Parallax Background */}
       <motion.div
@@ -261,5 +263,6 @@ export default function AboutPage() {
         </div>
       </section>
     </main>
+    </Skeleton>
   );
 }

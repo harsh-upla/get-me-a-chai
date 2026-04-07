@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SessionWrapper } from "@/components/SessionWrapper";
 import PageTransition from "@/components/PageTransition";
+import './bones/registry'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
