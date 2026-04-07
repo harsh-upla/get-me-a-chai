@@ -11,7 +11,6 @@ import {
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-import { Skeleton } from 'boneyard-js/react'
 
 const Dashboard = () => {
   const { data: session } = useSession();
@@ -89,7 +88,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Skeleton name="blog-card" loading={false}>
+    <>
         <ToastContainer
           position="top-center"
           autoClose={5000}
@@ -239,7 +238,7 @@ const Dashboard = () => {
             </div>
           </form>
         </div>
-    </Skeleton>
+    </>
   );
 };
 

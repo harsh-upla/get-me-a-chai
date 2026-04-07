@@ -9,7 +9,6 @@ import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSearchParams } from "next/navigation";
 import { LuRefreshCcw } from "react-icons/lu";
-import { Skeleton } from 'boneyard-js/react'
 
 export default function PaymentPage({ username }) {
   let c = username.replace("%20", " ");
@@ -122,7 +121,7 @@ export default function PaymentPage({ username }) {
   };
 
   return (
-     <Skeleton name="blog-card" loading={false}>
+     <>
       <ToastContainer
         position="top-center"
         autoClose={5000}
@@ -276,6 +275,6 @@ export default function PaymentPage({ username }) {
           <span className="text-red-500">{error}</span>
         </div>
       </div>
-    </Skeleton>
+    </>
   );
 }

@@ -1,15 +1,9 @@
-// import ContactForm from "@/components/ContactForm";
-import Link from "next/link";
-import { Skeleton } from 'boneyard-js/react'
 
-export const metadata = {
-  title: "Contact — Your Name",
-  description: "Get in touch with me ",
-};
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
-    <Skeleton name="blog-card" loading={false}>
+    <>
       <main className="min-h-[88.2vh]  bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-size-[20px_20px] flex items-center justify-center p-6">
         {/* background linear */}
         {/* <div className="absolute inset-0 -z-20  bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-size-[20px_20px]" /> */}
@@ -79,6 +73,12 @@ export default function ContactPage() {
         </div> */}
         </section>
       </main>
-    </Skeleton>
+    </>
   );
 }
+
+
+export const metadata = {
+  title: "Contact — Your Name",
+  description: "Get in touch with me ",
+};

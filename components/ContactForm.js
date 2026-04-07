@@ -1,6 +1,5 @@
 // components/ContactForm.js
 "use client";
-
 import { useState, useRef } from "react";
 import { toast } from "react-toastify";
 
