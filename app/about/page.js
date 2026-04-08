@@ -56,6 +56,8 @@ export default function AboutPage() {
 
   return (
      <>
+     <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9342853720075226"
+     crossorigin="anonymous"></script></head>
     <main className="relative min-h-screen bg-[#071017] text-white overflow-hidden">
       {/* 🌊 Parallax Background */}
       <motion.div
