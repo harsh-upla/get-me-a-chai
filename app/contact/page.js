@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <>
     <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9342853720075226"
-     crossorigin="anonymous"></script></head>
+     crossOrigin="anonymous"></script></head>
       <main className="min-h-[88.2vh]  bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-size-[20px_20px] flex items-center justify-center p-6">
         {/* background linear */}
         {/* <div className="absolute inset-0 -z-20  bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-size-[20px_20px]" /> */}
