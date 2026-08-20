@@ -3,7 +3,6 @@ import { fetchAllUsers } from "@/actions/userActions";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { Skeleton } from 'boneyard-js/react'
 
 export default function Home() {
   const [users, setusers] = useState([]);
@@ -29,7 +28,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Skeleton name="blog-card" loading={false}>
+    <>
       <head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9342853720075226"
           crossOrigin="anonymous"></script>
@@ -198,6 +197,6 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
-    </Skeleton>
+    </>
   );
 };
